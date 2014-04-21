@@ -1,0 +1,39 @@
+/** 
+
+ Get a string input from keyboard. 
+
+ Assumption: the input is always a valid string. 
+
+ Prompt: "Please enter a string: " 
+
+ @param s string input from keyboard. 
+
+*/ 
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+void get_int_ref(string & s);        
+		
+int main() {
+
+    string s;
+    
+    get_int_ref(s);
+    
+    
+         
+        
+    return 0;
+} 
+
+void get_int_ref(string & s) {		
+
+  cout << "Please enter a string: ";
+  getline (cin,s);
+  cout << s << "\n";   
+    
+}              
