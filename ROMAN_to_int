@@ -1,0 +1,64 @@
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include <map>
+
+using namespace std;
+void get_int_ref(string & s);
+
+
+
+int ROMAN_to_int(string s)
+{
+   if (s.length()==0) return 0;  
+   
+        map<char, int> m;  
+        m['I'] = 1;  
+        m['V'] = 5;  
+        m['X'] = 10;  
+        m['L'] = 50;  
+        m['C'] = 100;  
+        m['D'] = 500;  
+        m['M'] = 1000;  
+   
+        int n = s.length();  
+        int result = m[s[n-1]];
+  
+        for (int i=n-2; i>=0; i--) {  
+            if (m[s[i+1]] <= m[s[i]])  
+                result += m[s[i]];  
+            else 
+                result -= m[s[i]];  
+        }  
+        return result;  
+      
+}
+
+int main()
+{
+   string s;
+   
+   get_int_ref(s);
+   cout << "The convert is " << ROMAN_to_int(s);
+   
+   return 0;
+}
+
+
+
+
+void get_int_ref(string & s) {
+    
+    char Roman_numeral[7]={'M','D','C','L','X','V','I'};		
+    
+    cout<< "Please enter the Roman numeral : M, D, C, L, X, V, I.\n "; 
+    cin>>s;
+    if(!(Roman_numeral[7])) 
+	{
+	 cout << "Error! Please enter again!";
+
+	}  
+    return;
+
+ 
+}
