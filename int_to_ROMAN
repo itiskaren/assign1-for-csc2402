@@ -1,0 +1,167 @@
+/** 
+
+ Converts a positive integer less than 4000 to Roman numeral. 
+
+ @param n: integer; 0 < n < 4000. 
+
+ @return Roman numeral as a string with value equal to n. 
+
+*/ 
+
+
+#include <iostream> 
+#include <string> 
+
+using namespace std; 
+int get_int_return_checked();
+string int_to_ROMAN(); 
+
+
+
+/**
+ Turns the number from 1 to 9
+*/
+string digit_name(int digit)
+{  
+   if (digit == 1) return "I";
+   if (digit == 2) return "II";
+   if (digit == 3) return "III";
+   if (digit == 4) return "IV";
+   if (digit == 5) return "V";
+   if (digit == 6) return "VI";
+   if (digit == 7) return "VII";
+   if (digit == 8) return "VIII";
+   if (digit == 9) return "IX";
+   return "";
+}
+
+/**
+ Turns the number 10, 20, 30, 40, 50, 60, 70, 80, 90
+*/
+string ten_name(int n)
+{  
+   if (n == 1) return "X";
+   if (n == 2) return "XX";
+   if (n == 3) return "XXX";
+   if (n == 4) return "XL";
+   if (n == 5) return "L";
+   if (n == 6) return "LX";
+   if (n == 7) return "LXX";
+   if (n == 8) return "LXXX";
+   if (n == 9) return "XC";
+   return "";
+}
+
+/**
+ Turns the number 100, 200, 300, 400, 500, 600, 700, 800, 900
+*/
+string hun_name(int n)
+{  
+   
+   if (n == 1) return "C";
+   if (n == 2) return "CC";
+   if (n == 3) return "CCC";
+   if (n == 4) return "CD";
+   if (n == 5) return "D";
+   if (n == 6) return "DC";
+   if (n == 7) return "DCC";
+   if (n == 8) return "DCCC";
+   if (n == 9) return "CM";
+   return "";
+}
+
+/**
+ Turns the number 1000, 2000, 3000
+*/
+string thou_name(int n)
+{  
+   
+   if (n == 1) return "M";
+   if (n == 2) return "MM";
+   if (n == 3) return "MMM";
+   
+   return "";
+}
+
+
+string int_to_ROMAN(int n)
+{
+   int part = n; // The part that still needs to be converted 
+   string roman; // The return value
+
+   if (part >= 1000)
+   {  
+      roman = thou_name(part / 1000);
+      part = part % 1000;
+   }
+
+   if (part >= 100)
+   {  
+      roman = roman + hun_name(part/100);
+      part = part % 100;
+   }   
+   if (part >= 10)
+   {  
+      roman = roman + ten_name(part/10);
+      part = part % 10;
+   }
+
+   if (part > 0)
+   {
+      roman = roman + digit_name(part);
+   }
+   return roman;
+}
+
+
+
+
+ 
+int main() 
+
+{ 
+
+ int n;
+ 
+ string r;
+ 
+ 
+ n = get_int_return_checked();
+
+ if (n == 0)
+ {
+  
+  cout<< "The intput is ZERO! ";
+
+ }
+
+ if(n > 0)
+ {
+ 
+ cout<< "The convert is " << int_to_ROMAN(n); 
+
+ } 
+
+ return 0; 
+
+} 
+
+ 
+
+int get_int_return_checked(){ 
+
+ int n;
+ cout<<"Please enter a number n: 0 < n < 4000: "; 
+ cin>> n;
+
+ if(0<n && n<4000){
+
+ return n;
+ }
+ else{
+ cout<< "Please enter again!\n";
+ } 
+ return 0;
+
+
+} 
