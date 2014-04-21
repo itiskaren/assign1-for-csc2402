@@ -1,0 +1,54 @@
+/** 
+
+ Get integer input from keyboard. 
+
+ If the input is negative or larger than 3999, 
+
+ it will ask for keyboard input again. 
+
+ Assumption: the input is always an integer. 
+
+ Prompt: “Please enter a number n: 0 < n < 4000: “ 
+
+ @param n: the integer input from keyboard. 
+
+*/ 
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+
+void get_int_ref(int & n);        
+		
+int main() {
+
+    int n;
+    get_int_ref(n);
+    
+    
+    
+    
+        
+    return 0;
+} 
+
+void get_int_ref(int & n) {		
+    
+
+ cout<<"Please enter a number n: 0 < n < 4000:\n"; 
+ cin>> n;
+
+ if(0<n && n<4000){
+
+ cout<< "The integer is "<<n<<"\n";
+ }
+ else{
+ cout<< "Please enter again!\n";
+ } 
+ 
+
+
+}          
