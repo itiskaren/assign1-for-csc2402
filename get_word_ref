@@ -1,0 +1,36 @@
+/** 
+
+ Get a single word input from keyboard. 
+
+ Assumption: the input is always a single word. 
+
+ Prompt: "Please enter a word: " 
+
+ @param s: word input from keyboard (one word string). 
+
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+void get_word_ref(string & s);        
+		
+int main() {
+
+    string s;
+    
+    get_int_ref(s);
+    
+         
+        
+    return 0;
+} 
+
+void get_word_ref(string & s) {		
+    cout<< "Please enter a word:\n"; 
+    cin>>s;    
+    
+}              
