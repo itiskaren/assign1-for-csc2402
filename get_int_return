@@ -1,0 +1,45 @@
+/** 
+
+ Get integer input from keyboard. 
+
+ Assumption: the input is always an integer. 
+
+ Prompt: “Please enter an integer: “ 
+
+ @return the integer input from keyboard. 
+
+*/ 
+
+#include <iostream> 
+
+#include <string> 
+
+using namespace std; 
+
+int get_int_return(); 
+
+ 
+
+int main() 
+
+{ 
+
+ int n ; 
+
+ cout << get_int_return() << endl; 
+
+ return 0; 
+
+} 
+
+ 
+
+int get_int_return(){ 
+
+ int x;
+ cout<< "Please enter an integer: ";
+ cin>> x;
+
+ return x;
+
+} 
